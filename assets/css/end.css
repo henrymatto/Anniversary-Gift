@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  /* allow body to expand if content grows */
+  width: 100%;
+  background: linear-gradient(135deg, #ffe6f0, #ffb3d9);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  /* only hide horizontal scroll */
+}
+
+canvas#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* allow content to push down */
+  text-align: center;
+  padding: 5vw;
+}
+
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: #ff1493;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+}
+
+.card {
+  width: 100%;
+  max-width: 800px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  color: #000000;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.8;
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.3);
+  animation: fadeInUp 1s ease-in-out;
+  margin-bottom: 2.5rem;
+}
+
+.card p {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+}
+
+.card p span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+}
+
+#giftBtn {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  margin-top: 40px;
+  background: linear-gradient(135deg, #ff69b4, #8e2de2);
+  color: #fff;
+  padding: 0.75em 2em;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+  transition: transform 0.3s ease;
+}
+
+#giftBtn:hover {
+  transform: scale(1.08);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

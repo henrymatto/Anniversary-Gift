@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.login-body {
+  background: linear-gradient(135deg, #FFB6C1, #FFF0F5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Canvas */
+#heartsCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* Container */
+.login-container {
+  position: relative;
+  z-index: 1;
+  background: white;
+  padding: 40px 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  animation: floatUp 1s ease;
+}
+
+/* Title */
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #FF1493;
+  margin-bottom: 10px;
+}
+
+.lower-wrpper{
+  font-family: 'Outfit', sans-serif;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: 2px solid #FF69B4;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #FF1493;
+  box-shadow: 0 0 8px #ff90cb80;
+}
+
+/* Password Field with Eye */
+.password-wrapper {
+  position: relative;
+}
+
+#togglePassword {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #FF1493;
+}
+
+/* Button */
+button {
+  background-color: #FF69B4;
+  color: white;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #FF1493;
+}
+
+/* Error Message */
+#errorMsg {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Animation */
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .login-container {
+    padding: 30px 20px;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+
+  input {
+    padding: 12px;
+  }
+
+  #togglePassword {
+    right: 10px;
+  }
+}
