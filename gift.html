@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasa Laga Mera Mazak</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Oufit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/gift.css">
+</head>
+
+<body>
+    <canvas id="bgCanvas"></canvas>
+
+    <div class="message">Hahaha.....❤️😭😂 Babyyyy Ye Nh Hai Apkaaaa Gifttttt Ye Toh Meraaaa Giftttttt
+        Hai<br><br>Meraaaaa Subseeee Pyaraaaaaa Naanaa Sa Kakaaaaaa ❤️😭✨</div>
+    <img class="my-pic" src="assets/images/Gift-Pix.jpg" alt="Laiba's Pic">
+    <button class="button"><a href="end.html">Gift Ye Hai 🎁</a></button>
+
+    <script>
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let hearts = [];
+
+        function createHeart() {
+            hearts.push({
+                x: Math.random() * canvas.width,
+                y: canvas.height + 20,
+                size: Math.random() * 20 + 10,
+                speed: Math.random() * 2 + 1
+            });
+        }
+
+        function drawHearts() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(255, 105, 180, 0.8)';
+            hearts.forEach(h => {
+                ctx.beginPath();
+                ctx.arc(h.x, h.y, h.size, 0, Math.PI * 2);
+                ctx.fill();
+                h.y -= h.speed;
+            });
+            hearts = hearts.filter(h => h.y + h.size > 0);
+        }
+
+        setInterval(() => {
+            createHeart();
+            drawHearts();
+        }, 30);
+    </script>
+</body>
+
+</html>
